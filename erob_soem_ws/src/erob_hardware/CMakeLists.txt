@@ -1,0 +1,42 @@
+cmake_minimum_required(VERSION 3.16)
+project(erob_hardware)
+
+find_package(ament_cmake REQUIRED)
+find_package(erob_driver REQUIRED)
+find_package(hardware_interface REQUIRED)
+find_package(pluginlib REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(rclcpp_lifecycle REQUIRED)
+find_package(diagnostic_msgs REQUIRED)
+find_package(std_srvs REQUIRED)
+
+add_library(${PROJECT_NAME} SHARED src/erob_system.cpp)
+target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
+target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic)
+target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include> $<INSTALL_INTERFACE:include>)
+target_link_libraries(${PROJECT_NAME} erob_driver::erob_driver hardware_interface::hardware_interface)
+ament_target_dependencies(${PROJECT_NAME} pluginlib rclcpp rclcpp_lifecycle diagnostic_msgs std_srvs)
+pluginlib_export_plugin_description_file(hardware_interface erob_hardware_plugins.xml)
+
+install(TARGETS ${PROJECT_NAME} EXPORT erob_hardwareTargets LIBRARY DESTINATION lib)
+install(DIRECTORY include/ DESTINATION include)
+
+ament_export_targets(erob_hardwareTargets HAS_LIBRARY_TARGET)
+ament_export_dependencies(erob_driver hardware_interface pluginlib rclcpp rclcpp_lifecycle diagnostic_msgs std_srvs)
+
+if(BUILD_TESTING)
+  find_package(ament_cmake_gtest REQUIRED)
+  ament_add_gtest(test_hardware test/test_hardware.cpp)
+  # Humble's bundled gtest predates GCC 15's removal of transitive cstdint.
+  if(TARGET gtest)
+    get_target_property(gtest_imported gtest IMPORTED)
+    if(NOT gtest_imported)
+      target_compile_options(gtest PRIVATE -include cstdint)
+    endif()
+  endif()
+  target_link_libraries(test_hardware hardware_interface::hardware_interface)
+  ament_target_dependencies(test_hardware pluginlib rclcpp rclcpp_lifecycle)
+  target_compile_definitions(test_hardware PRIVATE EROB_TEST_CONFIG="${CMAKE_CURRENT_SOURCE_DIR}/../erob_bringup/config/robot_mock.yaml")
+endif()
+
+ament_package()

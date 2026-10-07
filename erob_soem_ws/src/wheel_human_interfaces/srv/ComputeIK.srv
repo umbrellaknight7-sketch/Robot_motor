@@ -1,0 +1,24 @@
+uint8 POSITION_ONLY=0
+uint8 FULL_POSE=1
+string planning_group
+uint8 target_mode
+# Target must be in base_link. Stamp is unused for explicit calculations.
+geometry_msgs/PoseStamped target
+sensor_msgs/JointState seed
+
+---
+
+int32 SUCCESS=0
+int32 INVALID_INPUT=1
+int32 NO_CONVERGENCE=2
+int32 TIMEOUT=3
+int32 INTERNAL_ERROR=4
+int32 error_code
+string message
+# Empty on failure; on success contains all movable joints, including held ones.
+sensor_msgs/JointState solution
+geometry_msgs/PoseStamped achieved_pose
+# Residuals are NaN when unavailable; orientation is NaN in position-only mode.
+float64 position_error
+float64 orientation_error
+int32 iterations

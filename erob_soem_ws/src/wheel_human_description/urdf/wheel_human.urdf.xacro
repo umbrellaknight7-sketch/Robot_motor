@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="wheel_human_dummy">
+  <xacro:arg name="wrists_enabled" default="true"/>
+  <xacro:include filename="$(find wheel_human_description)/urdf/dummy_body.xacro"/>
+  <xacro:wheel_human_dummy_body wrists_enabled="$(arg wrists_enabled)"/>
+</robot>

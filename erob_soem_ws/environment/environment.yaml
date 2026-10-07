@@ -1,0 +1,15 @@
+name: ros_humble
+channels:
+  - robostack-humble
+  - conda-forge
+dependencies:
+  - ros-humble-ros-base
+  - ros-humble-ros2-control=2.54.0
+  - ros-humble-ros2-controllers=2.53.1
+  - ros-humble-xacro
+  - ros-humble-robot-state-publisher
+  - ros-humble-ament-cmake-gtest
+  - colcon-common-extensions
+  - yaml-cpp
+  - cmake
+  - cxx-compiler

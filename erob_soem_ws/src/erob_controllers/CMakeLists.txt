@@ -1,0 +1,37 @@
+cmake_minimum_required(VERSION 3.16)
+project(erob_controllers)
+
+find_package(ament_cmake REQUIRED)
+set(dependencies controller_interface hardware_interface pluginlib rclcpp rclcpp_action control_msgs trajectory_msgs diagnostic_msgs std_msgs std_srvs erob_driver)
+foreach(dependency IN LISTS dependencies)
+  find_package(${dependency} REQUIRED)
+endforeach()
+
+add_library(erob_controllers SHARED src/csp_trajectory_controller.cpp src/trajectory_sampler.cpp)
+target_compile_features(erob_controllers PUBLIC cxx_std_17)
+target_compile_options(erob_controllers PRIVATE -Wall -Wextra -Wpedantic)
+target_include_directories(erob_controllers PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include> $<INSTALL_INTERFACE:include>)
+target_link_libraries(erob_controllers controller_interface::controller_interface hardware_interface::hardware_interface erob_driver::erob_driver)
+ament_target_dependencies(erob_controllers pluginlib rclcpp rclcpp_action control_msgs trajectory_msgs diagnostic_msgs std_msgs std_srvs)
+pluginlib_export_plugin_description_file(controller_interface erob_controllers_plugins.xml)
+
+install(TARGETS erob_controllers EXPORT erob_controllersTargets LIBRARY DESTINATION lib)
+install(DIRECTORY include/ DESTINATION include)
+
+ament_export_targets(erob_controllersTargets HAS_LIBRARY_TARGET)
+ament_export_dependencies(${dependencies})
+
+if(BUILD_TESTING)
+  find_package(ament_cmake_gtest REQUIRED)
+  ament_add_gtest(test_sampler test/test_sampler.cpp src/trajectory_sampler.cpp)
+  target_include_directories(test_sampler PRIVATE include)
+  target_compile_features(test_sampler PRIVATE cxx_std_17)
+  if(TARGET gtest)
+    get_target_property(imported gtest IMPORTED)
+    if(NOT imported)
+      target_compile_options(gtest PRIVATE -include cstdint)
+    endif()
+  endif()
+endif()
+
+ament_package()

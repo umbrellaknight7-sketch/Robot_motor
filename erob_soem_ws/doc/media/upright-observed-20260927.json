@@ -1,0 +1,34 @@
+{
+  "requested_degrees": -90,
+  "actual_radians": {
+    "Left_Arm_Joint3": -1.570628,
+    "Right_Arm_Joint3": -1.570628
+  },
+  "actual_degrees": {
+    "Left_Arm_Joint3": -89.99035558507346,
+    "Right_Arm_Joint3": -89.99035558507346
+  },
+  "other_joints_unchanged": true,
+  "joint_positions": {
+    "Left_Wheel_Joint": 0.0,
+    "Right_Wheel_Joint": 0.0,
+    "Feet_Joint": 0.0,
+    "Knee_Joint": 0.0,
+    "Hip_Joint": 0.0,
+    "Neck_Joint": 0.0,
+    "Face_Joint": 0.0,
+    "Left_Shoulder_Joint": 0.0,
+    "Left_Arm_Joint1": 0.0,
+    "Left_Arm_Joint2": 0.0,
+    "Left_Arm_Joint3": -1.570628,
+    "Left_Arm_Joint4": 0.0,
+    "Left_Wrist_Joint": 0.0,
+    "Right_Shoulder_Joint": 0.0,
+    "Right_Arm_Joint1": 0.0,
+    "Right_Arm_Joint2": 0.0,
+    "Right_Arm_Joint3": -1.570628,
+    "Right_Arm_Joint4": 0.0,
+    "Right_Wrist_Joint": 0.0
+  },
+  "reason_for_rounding": "GUI slider uses 10000 steps over [-3.14, 3.14] rad"
+}

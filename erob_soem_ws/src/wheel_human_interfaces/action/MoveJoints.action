@@ -1,0 +1,33 @@
+# Ownership token returned by acquire_control.
+string token
+string[] joint_names
+
+# Joint positions in radians, in joint_names order.
+float64[] positions
+
+# Requested rest-to-rest motion duration.
+builtin_interfaces/Duration duration
+# Empty means zero feedforward. Names may be a subset of joint_names.
+string[] torque_joint_names
+float64[] torque_offsets
+bool gravity_compensation
+
+---
+
+int32 SUCCESS=0
+int32 NOT_IMPLEMENTED=1
+int32 INVALID_GOAL=2
+int32 NOT_OWNER=3
+int32 BUSY=4
+int32 NOT_READY=5
+int32 EXECUTION_FAILED=6
+int32 CANCELED=7
+int32 error_code
+string message
+
+---
+
+string state
+string[] joint_names
+float64[] actual_positions
+float64 progress

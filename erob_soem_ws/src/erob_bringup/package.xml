@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>erob_bringup</name>
+  <version>0.1.0</version>
+  <description>eRob EtherCAT driver and 15-axis Humble integration.</description>
+  <maintainer email="xurui@todo.todo">xurui</maintainer>
+  <license>Apache-2.0</license>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <depend>erob_hardware</depend>
+  <depend>controller_manager</depend>
+  <depend>joint_state_broadcaster</depend>
+  <depend>joint_trajectory_controller</depend>
+  <depend>std_srvs</depend>
+  <depend>diagnostic_msgs</depend>
+  <depend>robot_state_publisher</depend>
+  <depend>xacro</depend>
+  <depend>launch_ros</depend>
+  <depend>rclpy</depend>
+  <depend>sensor_msgs</depend>
+  <depend>trajectory_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>controller_manager_msgs</depend>
+  <depend>rcl_interfaces</depend>
+  <depend>ament_index_python</depend>
+  <test_depend>control_msgs</test_depend>
+  <test_depend>action_msgs</test_depend>
+  <export><build_type>ament_cmake</build_type></export>
+</package>

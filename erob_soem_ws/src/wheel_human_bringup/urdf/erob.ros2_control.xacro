@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:macro name="erob_control" params="config_file backend enable_mock_fault_injection:=false">
+    <xacro:property name="cfg" value="${xacro.load_yaml(config_file)}"/>
+    <ros2_control name="ErobSystem" type="system">
+      <hardware>
+        <plugin>erob_hardware/ErobSystem</plugin>
+        <param name="config_file">${config_file}</param>
+        <param name="backend">${backend}</param>
+        <param name="enable_mock_fault_injection">${str(enable_mock_fault_injection).lower()}</param>
+      </hardware>
+      <xacro:macro name="erob_control_joints" params="motors">
+        <xacro:if value="${len(motors) > 0}">
+          <xacro:property name="motor" value="${motors[0]}"/>
+          <joint name="${motor['joint']}">
+            <command_interface name="position"/>
+            <xacro:if value="${cfg['bus'].get('csp_feedforward', False)}">
+              <command_interface name="velocity_offset"/>
+              <command_interface name="torque_offset"/>
+            </xacro:if>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <xacro:if value="${motor.get('effort_verified', cfg['profile']['effort_verified'])}">
+              <state_interface name="effort"/>
+            </xacro:if>
+          </joint>
+          <xacro:erob_control_joints motors="${motors[1:]}"/>
+        </xacro:if>
+      </xacro:macro>
+      <xacro:erob_control_joints motors="${cfg['motors']}"/>
+    </ros2_control>
+  </xacro:macro>
+</robot>

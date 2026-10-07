@@ -1,0 +1,218 @@
+# SYNTHETIC joint-to-motor assignment in dummy URDF order; NOT measured wiring.
+# Branch A/B/C membership is inherited test data, not anatomical grouping.
+# INCOMPLETE. Replace every synthetic identity, path, scale and limit before verification.
+# Synthetic identities and port paths: NOT a physical commissioning profile.
+# Optional commander feedforward: see doc/commander.md for commissioning.
+# Enable csp_feedforward only with calibrated offset limits and verified firmware.
+bus:
+  csp_feedforward: false
+  backend: soem
+  interface: "REPLACE_ME"
+  expected_motors: 15
+  cycle_us: 1000
+  command_timeout_ms: 20
+  feedback_timeout_ms: 10
+  bad_cycles: 5
+  missed_deadlines: 5
+  lateness_us: 4000
+  cpu: -1
+  priority: 60
+  require_realtime: true
+  enable_delay_ms: 500
+  disable_delay_ms: 301
+  transition_timeout_ms: 10000
+  mode_timeout_ms: 1000
+  standstill_ms: 100
+  hub_model: ""
+  esi_reference: ""
+  topology_verified: false
+  stop_verified: false
+  watchdog_verified: false
+  padding_verified: false
+
+profile:
+  hold_acceleration: 0.0  # REQUIRED verified rad/s^2
+  hold_jerk: 0.0  # REQUIRED verified rad/s^3
+  hold_tracking_error: 0.0  # REQUIRED verified radians
+  hold_verified: false
+  verified: false
+  effort_verified: false
+  position_counts_per_rad: 83443.02680376363
+  velocity_counts_per_rad_s: 83443.02680376363
+  zero_counts: 0.0
+  direction: 1.0
+  nm_per_raw: 0.001
+  min_position: -1.57079632679
+  max_position: 1.57079632679
+  max_velocity: 1.0
+  max_effort: 1.0
+  max_torque_raw: 1000
+  quick_stop_deceleration: 500000
+  standstill_velocity: 0.01
+
+motors:
+  - logical_id: "0x01"
+    joint: Feet_Joint
+    branch: A
+    branch_position: 1
+    topology_path: [1]
+    identity:
+      vendor: "0x5A65726F"
+      product: "0x26483052"
+      revision: "0x00020111"
+      serial: 1001
+      require_serial: true
+  - logical_id: "0x02"
+    joint: Knee_Joint
+    branch: A
+    branch_position: 2
+    topology_path: [1, 1]
+    identity:
+      vendor: "0x5A65726F"
+      product: "0x26483052"
+      revision: "0x00020111"
+      serial: 1002
+      require_serial: true
+  - logical_id: "0x03"
+    joint: Hip_Joint
+    branch: A
+    branch_position: 3
+    topology_path: [1, 1, 1]
+    identity:
+      vendor: "0x5A65726F"
+      product: "0x26483052"
+      revision: "0x00020111"
+      serial: 1003
+      require_serial: true
+  - logical_id: "0x04"
+    joint: Neck_Joint
+    branch: A
+    branch_position: 4
+    topology_path: [1, 1, 1, 1]
+    identity:
+      vendor: "0x5A65726F"
+      product: "0x26483052"
+      revision: "0x00020111"
+      serial: 1004
+      require_serial: true
+  - logical_id: "0x05"
+    joint: Face_Joint
+    branch: A
+    branch_position: 5
+    topology_path: [1, 1, 1, 1, 1]
+    identity:
+      vendor: "0x5A65726F"
+      product: "0x26483052"
+      revision: "0x00020111"
+      serial: 1005
+      require_serial: true
+  - logical_id: "0x06"
+    joint: Left_Shoulder_Joint
+    branch: A
+    branch_position: 6
+    topology_path: [1, 1, 1, 1, 1, 1]
+    identity:
+      vendor: "0x5A65726F"
+      product: "0x26483052"
+      revision: "0x00020111"
+      serial: 1006
+      require_serial: true
+  - logical_id: "0x07"
+    joint: Left_Arm_Joint1
+    branch: A
+    branch_position: 7
+    topology_path: [1, 1, 1, 1, 1, 1, 1]
+    identity:
+      vendor: "0x5A65726F"
+      product: "0x26483052"
+      revision: "0x00020111"
+      serial: 1007
+      require_serial: true
+  - logical_id: "0x08"
+    joint: Left_Arm_Joint2
+    branch: B
+    branch_position: 1
+    topology_path: [2]
+    identity:
+      vendor: "0x5A65726F"
+      product: "0x26483052"
+      revision: "0x00020111"
+      serial: 1008
+      require_serial: true
+  - logical_id: "0x09"
+    joint: Left_Arm_Joint3
+    branch: B
+    branch_position: 2
+    topology_path: [2, 1]
+    identity:
+      vendor: "0x5A65726F"
+      product: "0x26483052"
+      revision: "0x00020111"
+      serial: 1009
+      require_serial: true
+  - logical_id: "0x0A"
+    joint: Left_Arm_Joint4
+    branch: B
+    branch_position: 3
+    topology_path: [2, 1, 1]
+    identity:
+      vendor: "0x5A65726F"
+      product: "0x26483052"
+      revision: "0x00020111"
+      serial: 1010
+      require_serial: true
+  - logical_id: "0x0B"
+    joint: Right_Shoulder_Joint
+    branch: B
+    branch_position: 4
+    topology_path: [2, 1, 1, 1]
+    identity:
+      vendor: "0x5A65726F"
+      product: "0x26483052"
+      revision: "0x00020111"
+      serial: 1011
+      require_serial: true
+  - logical_id: "0x0C"
+    joint: Right_Arm_Joint1
+    branch: B
+    branch_position: 5
+    topology_path: [2, 1, 1, 1, 1]
+    identity:
+      vendor: "0x5A65726F"
+      product: "0x26483052"
+      revision: "0x00020111"
+      serial: 1012
+      require_serial: true
+  - logical_id: "0x0D"
+    joint: Right_Arm_Joint2
+    branch: C
+    branch_position: 1
+    topology_path: [3]
+    identity:
+      vendor: "0x5A65726F"
+      product: "0x26483052"
+      revision: "0x00020111"
+      serial: 1013
+      require_serial: true
+  - logical_id: "0x0E"
+    joint: Right_Arm_Joint3
+    branch: C
+    branch_position: 2
+    topology_path: [3, 1]
+    identity:
+      vendor: "0x5A65726F"
+      product: "0x26483052"
+      revision: "0x00020111"
+      serial: 1014
+      require_serial: true
+  - logical_id: "0x0F"
+    joint: Right_Arm_Joint4
+    branch: C
+    branch_position: 3
+    topology_path: [3, 1, 1]
+    identity:
+      vendor: "0x5A65726F"
+      product: "0x26483052"
+      revision: "0x00020111"
+      serial: 1015
+      require_serial: true

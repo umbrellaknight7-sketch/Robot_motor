@@ -1,0 +1,26 @@
+# Visually confirmed upright reference; not encoder zeros or a motion command.
+# Keep exact -pi/2 here; GUI sliders display a quantized approximation.
+name: upright
+model: Kinematics_fixed
+units: radians
+
+joint_positions:
+  Left_Wheel_Joint: 0.0
+  Right_Wheel_Joint: 0.0
+  Feet_Joint: 0.0
+  Knee_Joint: 0.0
+  Hip_Joint: 0.0
+  Neck_Joint: 0.0
+  Face_Joint: 0.0
+  Left_Shoulder_Joint: 0.0
+  Left_Arm_Joint1: 0.0
+  Left_Arm_Joint2: 0.0
+  Left_Arm_Joint3: -1.5707963267948966
+  Left_Arm_Joint4: 0.0
+  Left_Wrist_Joint: 0.0
+  Right_Shoulder_Joint: 0.0
+  Right_Arm_Joint1: 0.0
+  Right_Arm_Joint2: 0.0
+  Right_Arm_Joint3: -1.5707963267948966
+  Right_Arm_Joint4: 0.0
+  Right_Wrist_Joint: 0.0

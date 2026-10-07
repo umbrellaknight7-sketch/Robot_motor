@@ -1,0 +1,10 @@
+# SOFTWARE ONLY: synthetic wrist units, geometry and limits; not L30 calibration.
+wheel_human_wrist_adapter:
+  ros__parameters:
+    mode: mock
+    goal_tolerance: 0.02
+    standstill_velocity: 0.03
+    goal_time_tolerance: 2.0
+    feedback_timeout: 0.5
+    heartbeat_timeout: 0.5
+    stop_timeout: 2.0

@@ -1,0 +1,22 @@
+string token
+string planning_group
+string end_effector_link
+geometry_msgs/PoseStamped target
+builtin_interfaces/Duration duration
+
+---
+
+int32 SUCCESS=0
+int32 NOT_IMPLEMENTED=1
+int32 INVALID_GOAL=2
+int32 NOT_OWNER=3
+int32 BUSY=4
+int32 NOT_READY=5
+int32 EXECUTION_FAILED=6
+int32 CANCELED=7
+int32 error_code
+string message
+
+---
+
+string state

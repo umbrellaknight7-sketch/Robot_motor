@@ -1,0 +1,18 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 1000
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+    position_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+position_controller:
+  ros__parameters:
+    joints: [motor_01_joint, motor_02_joint, motor_03_joint, motor_04_joint, motor_05_joint, motor_06_joint, motor_07_joint, motor_08_joint, motor_09_joint, motor_0a_joint, motor_0b_joint, motor_0c_joint, motor_0d_joint, motor_0e_joint, motor_0f_joint]
+    command_interfaces: [position]
+    open_loop_control: false
+    set_last_command_interface_value_as_state_on_activation: false
+    state_interfaces: [position, velocity]
+    state_publish_rate: 50.0
+    action_monitor_rate: 20.0
+    allow_nonzero_velocity_at_trajectory_end: false

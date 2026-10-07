@@ -1,0 +1,15 @@
+# Explicit model configuration: all movable joints, names and positions only.
+sensor_msgs/JointState configuration
+string target_frame
+
+---
+
+int32 SUCCESS=0
+int32 INVALID_INPUT=1
+int32 NO_CONVERGENCE=2
+int32 TIMEOUT=3
+int32 INTERNAL_ERROR=4
+int32 error_code
+string message
+# Calculated pose in base_link. Zero stamp: not a live measurement.
+geometry_msgs/PoseStamped pose

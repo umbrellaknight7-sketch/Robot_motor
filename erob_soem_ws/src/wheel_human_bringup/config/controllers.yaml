@@ -1,0 +1,18 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 1000
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+    position_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+position_controller:
+  ros__parameters:
+    joints: [Feet_Joint, Knee_Joint, Hip_Joint, Neck_Joint, Face_Joint, Left_Shoulder_Joint, Left_Arm_Joint1, Left_Arm_Joint2, Left_Arm_Joint3, Left_Arm_Joint4, Right_Shoulder_Joint, Right_Arm_Joint1, Right_Arm_Joint2, Right_Arm_Joint3, Right_Arm_Joint4]
+    command_interfaces: [position]
+    open_loop_control: false
+    set_last_command_interface_value_as_state_on_activation: false
+    state_interfaces: [position, velocity]
+    state_publish_rate: 50.0
+    action_monitor_rate: 20.0
+    allow_nonzero_velocity_at_trajectory_end: false

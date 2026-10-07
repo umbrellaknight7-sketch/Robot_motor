@@ -1,0 +1,468 @@
+{
+  "old_model": "/home/xurui/downloads/Robot_motor/wheel_human_urdf/Kinematics_only/urdf/Kinematics_only.urdf",
+  "new_model": "/home/xurui/downloads/Robot_motor/wheel_human_urdf/Kinematics_fixed/urdf/Kinematics_fixed.urdf",
+  "old_model_sha256_unchanged": "77606986c26be3d5c4a41d09ef0ffa07a3bcebfb0b52c7a1e68b24461f26e6f3",
+  "archive_sha256_unchanged": "31567a7f9facb35de5b551e0e4bcabef74007c0814ff1db626b615efc7b34390",
+  "root": "base_link",
+  "links": 22,
+  "movable_joints": 19,
+  "fixed_joints": 2,
+  "same_link_names_joint_names_types_axes_parent_child_connections": true,
+  "all_mesh_paths_exist": true,
+  "joint_changes": [
+    {
+      "joint": "Left_Wheel_Joint",
+      "field": "limit",
+      "old": {
+        "lower": "-3.141592653589793",
+        "upper": "3.141592653589793",
+        "effort": "0",
+        "velocity": "0"
+      },
+      "new": {
+        "lower": "-3.14",
+        "upper": "3.14",
+        "effort": "0",
+        "velocity": "0"
+      }
+    },
+    {
+      "joint": "Right_Wheel_Joint",
+      "field": "limit",
+      "old": {
+        "lower": "-3.141592653589793",
+        "upper": "3.141592653589793",
+        "effort": "0",
+        "velocity": "0"
+      },
+      "new": {
+        "lower": "-3.14",
+        "upper": "3.14",
+        "effort": "0",
+        "velocity": "0"
+      }
+    },
+    {
+      "joint": "Feet_Joint",
+      "field": "origin",
+      "old": {
+        "xyz": "-0.1175 -0.088326 0.027791",
+        "rpy": "-1.5708 0 -3.1416"
+      },
+      "new": {
+        "xyz": "-0.1175 -0.088326 0.027791",
+        "rpy": "1.5708 -1.5708 0"
+      }
+    },
+    {
+      "joint": "Feet_Joint",
+      "field": "limit",
+      "old": {
+        "lower": "-3.141592653589793",
+        "upper": "3.141592653589793",
+        "effort": "0",
+        "velocity": "0"
+      },
+      "new": {
+        "lower": "-3.14",
+        "upper": "3.14",
+        "effort": "0",
+        "velocity": "0"
+      }
+    },
+    {
+      "joint": "Knee_Joint",
+      "field": "origin",
+      "old": {
+        "xyz": "0 -0.385 0.0075",
+        "rpy": "0 0 3.1416"
+      },
+      "new": {
+        "xyz": "0.385 0 0.0075",
+        "rpy": "0 0 -3.1416"
+      }
+    },
+    {
+      "joint": "Knee_Joint",
+      "field": "limit",
+      "old": {
+        "lower": "-3.141592653589793",
+        "upper": "3.141592653589793",
+        "effort": "0",
+        "velocity": "0"
+      },
+      "new": {
+        "lower": "-3.14",
+        "upper": "3.14",
+        "effort": "0",
+        "velocity": "0"
+      }
+    },
+    {
+      "joint": "Hip_Joint",
+      "field": "origin",
+      "old": {
+        "xyz": "0 0.385 0",
+        "rpy": "0 0 0"
+      },
+      "new": {
+        "xyz": "-0.385 0 0",
+        "rpy": "0 0 3.1416"
+      }
+    },
+    {
+      "joint": "Hip_Joint",
+      "field": "limit",
+      "old": {
+        "lower": "-3.141592653589793",
+        "upper": "3.141592653589793",
+        "effort": "0",
+        "velocity": "0"
+      },
+      "new": {
+        "lower": "-3.14",
+        "upper": "3.14",
+        "effort": "0",
+        "velocity": "0"
+      }
+    },
+    {
+      "joint": "Neck_Joint",
+      "field": "origin",
+      "old": {
+        "xyz": "0 0.46565 -0.09575",
+        "rpy": "1.5708 1.5708 0"
+      },
+      "new": {
+        "xyz": "0.46565 0 -0.09575",
+        "rpy": "1.5708 0 1.5708"
+      }
+    },
+    {
+      "joint": "Neck_Joint",
+      "field": "limit",
+      "old": {
+        "lower": "-3.141592653589793",
+        "upper": "3.141592653589793",
+        "effort": "0",
+        "velocity": "0"
+      },
+      "new": {
+        "lower": "-3.14",
+        "upper": "3.14",
+        "effort": "0",
+        "velocity": "0"
+      }
+    },
+    {
+      "joint": "Face_Joint",
+      "field": "origin",
+      "old": {
+        "xyz": "-0.03635 0 0.1196",
+        "rpy": "1.5708 0 -1.5708"
+      },
+      "new": {
+        "xyz": "0 0.03635 0.1196",
+        "rpy": "1.5708 0 3.1416"
+      }
+    },
+    {
+      "joint": "Face_Joint",
+      "field": "limit",
+      "old": {
+        "lower": "-3.141592653589793",
+        "upper": "3.141592653589793",
+        "effort": "0",
+        "velocity": "0"
+      },
+      "new": {
+        "lower": "-3.14",
+        "upper": "3.14",
+        "effort": "0",
+        "velocity": "0"
+      }
+    },
+    {
+      "joint": "Left_Shoulder_Joint",
+      "field": "origin",
+      "old": {
+        "xyz": "0 0.462 -0.24615",
+        "rpy": "0 0 0"
+      },
+      "new": {
+        "xyz": "0.462 0 -0.24615",
+        "rpy": "0 0 -3.1416"
+      }
+    },
+    {
+      "joint": "Left_Shoulder_Joint",
+      "field": "limit",
+      "old": {
+        "lower": "-3.141592653589793",
+        "upper": "3.141592653589793",
+        "effort": "0",
+        "velocity": "0"
+      },
+      "new": {
+        "lower": "-3.14",
+        "upper": "3.14",
+        "effort": "0",
+        "velocity": "0"
+      }
+    },
+    {
+      "joint": "Left_Arm_Joint1",
+      "field": "origin",
+      "old": {
+        "xyz": "-0.044 0 -0.0605",
+        "rpy": "0 1.5708 0"
+      },
+      "new": {
+        "xyz": "0 -0.044 -0.0605",
+        "rpy": "1.5708 0 3.1416"
+      }
+    },
+    {
+      "joint": "Left_Arm_Joint1",
+      "field": "limit",
+      "old": {
+        "lower": "-3.141592653589793",
+        "upper": "3.141592653589793",
+        "effort": "0",
+        "velocity": "0"
+      },
+      "new": {
+        "lower": "-3.14",
+        "upper": "3.14",
+        "effort": "0",
+        "velocity": "0"
+      }
+    },
+    {
+      "joint": "Left_Arm_Joint2",
+      "field": "origin",
+      "old": {
+        "xyz": "0 -0.1422 0.0438",
+        "rpy": "-1.5708 0 0"
+      },
+      "new": {
+        "xyz": "-0.1422 0 0.0438",
+        "rpy": "-1.5708 0 -1.5708"
+      }
+    },
+    {
+      "joint": "Left_Arm_Joint2",
+      "field": "limit",
+      "old": {
+        "lower": "-3.141592653589793",
+        "upper": "3.141592653589793",
+        "effort": "0",
+        "velocity": "0"
+      },
+      "new": {
+        "lower": "-3.14",
+        "upper": "3.14",
+        "effort": "0",
+        "velocity": "0"
+      }
+    },
+    {
+      "joint": "Left_Arm_Joint3",
+      "field": "limit",
+      "old": {
+        "lower": "-3.141592653589793",
+        "upper": "3.141592653589793",
+        "effort": "0",
+        "velocity": "0"
+      },
+      "new": {
+        "lower": "-3.14",
+        "upper": "3.14",
+        "effort": "0",
+        "velocity": "0"
+      }
+    },
+    {
+      "joint": "Left_Arm_Joint4",
+      "field": "limit",
+      "old": {
+        "lower": "-3.141592653589793",
+        "upper": "3.141592653589793",
+        "effort": "0",
+        "velocity": "0"
+      },
+      "new": {
+        "lower": "-3.14",
+        "upper": "3.14",
+        "effort": "0",
+        "velocity": "0"
+      }
+    },
+    {
+      "joint": "Left_Wrist_Joint",
+      "field": "limit",
+      "old": {
+        "lower": "-3.141592653589793",
+        "upper": "3.141592653589793",
+        "effort": "0",
+        "velocity": "0"
+      },
+      "new": {
+        "lower": "-3.14",
+        "upper": "3.14",
+        "effort": "0",
+        "velocity": "0"
+      }
+    },
+    {
+      "joint": "Right_Shoulder_Joint",
+      "field": "origin",
+      "old": {
+        "xyz": "0 0.462 0.055651",
+        "rpy": "0 0 0"
+      },
+      "new": {
+        "xyz": "0.462 0 0.055651",
+        "rpy": "0 0 0"
+      }
+    },
+    {
+      "joint": "Right_Shoulder_Joint",
+      "field": "limit",
+      "old": {
+        "lower": "-3.141592653589793",
+        "upper": "3.141592653589793",
+        "effort": "0",
+        "velocity": "0"
+      },
+      "new": {
+        "lower": "-3.14",
+        "upper": "3.14",
+        "effort": "0",
+        "velocity": "0"
+      }
+    },
+    {
+      "joint": "Right_Arm_Joint1",
+      "field": "origin",
+      "old": {
+        "xyz": "-0.044 0 0.0595",
+        "rpy": "3.1416 -1.5708 0"
+      },
+      "new": {
+        "xyz": "0 0.044 0.0595",
+        "rpy": "1.5708 0 3.1416"
+      }
+    },
+    {
+      "joint": "Right_Arm_Joint1",
+      "field": "limit",
+      "old": {
+        "lower": "-3.141592653589793",
+        "upper": "3.141592653589793",
+        "effort": "0",
+        "velocity": "0"
+      },
+      "new": {
+        "lower": "-3.14",
+        "upper": "3.14",
+        "effort": "0",
+        "velocity": "0"
+      }
+    },
+    {
+      "joint": "Right_Arm_Joint2",
+      "field": "origin",
+      "old": {
+        "xyz": "0 -0.1425 -0.044",
+        "rpy": "1.5708 0 0"
+      },
+      "new": {
+        "xyz": "0.1425 0 -0.044",
+        "rpy": "1.5708 0 1.5708"
+      }
+    },
+    {
+      "joint": "Right_Arm_Joint2",
+      "field": "limit",
+      "old": {
+        "lower": "-3.141592653589793",
+        "upper": "3.141592653589793",
+        "effort": "0",
+        "velocity": "0"
+      },
+      "new": {
+        "lower": "-3.14",
+        "upper": "3.14",
+        "effort": "0",
+        "velocity": "0"
+      }
+    },
+    {
+      "joint": "Right_Arm_Joint3",
+      "field": "limit",
+      "old": {
+        "lower": "-3.141592653589793",
+        "upper": "3.141592653589793",
+        "effort": "0",
+        "velocity": "0"
+      },
+      "new": {
+        "lower": "-3.14",
+        "upper": "3.14",
+        "effort": "0",
+        "velocity": "0"
+      }
+    },
+    {
+      "joint": "Right_Arm_Joint4",
+      "field": "limit",
+      "old": {
+        "lower": "-3.141592653589793",
+        "upper": "3.141592653589793",
+        "effort": "0",
+        "velocity": "0"
+      },
+      "new": {
+        "lower": "-3.14",
+        "upper": "3.14",
+        "effort": "0",
+        "velocity": "0"
+      }
+    },
+    {
+      "joint": "Right_Wrist_Joint",
+      "field": "limit",
+      "old": {
+        "lower": "-3.141592653589793",
+        "upper": "3.141592653589793",
+        "effort": "0",
+        "velocity": "0"
+      },
+      "new": {
+        "lower": "-3.14",
+        "upper": "3.14",
+        "effort": "0",
+        "velocity": "0"
+      }
+    }
+  ],
+  "links_with_changed_inertial_data": [
+    "Lower_Leg_Link",
+    "Upper_Leg_Link",
+    "Body_Link",
+    "Head_Link",
+    "Face_Link",
+    "Left_Arm_Link1",
+    "Left_Arm_Link2",
+    "Left_Arm_Link3",
+    "Left_Arm_Link4",
+    "Left_Arm_Link5",
+    "Right_Arm_Link1",
+    "Right_Arm_Link2",
+    "Right_Arm_Link3",
+    "Right_Arm_Link4",
+    "Right_Arm_Link5",
+    "Right_Hand_Link"
+  ]
+}

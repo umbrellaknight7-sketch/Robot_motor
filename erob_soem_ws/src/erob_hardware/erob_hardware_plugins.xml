@@ -1,0 +1,5 @@
+<library path="erob_hardware">
+  <class name="erob_hardware/ErobSystem" type="erob_hardware::ErobSystem" base_class_type="hardware_interface::SystemInterface">
+    <description>One EtherCAT master for a configurable eRob motor group.</description>
+  </class>
+</library>

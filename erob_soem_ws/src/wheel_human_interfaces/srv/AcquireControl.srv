@@ -1,0 +1,10 @@
+string source_id
+
+# An explicit takeover waits for the previous motion to stop before granting ownership.
+bool takeover
+
+---
+
+bool success
+string token
+string message

@@ -1,0 +1,7 @@
+string token
+
+---
+
+bool success
+float64 lease_remaining
+string message

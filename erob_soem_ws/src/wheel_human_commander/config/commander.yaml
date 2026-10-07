@@ -1,0 +1,9 @@
+wheel_human_commander:
+  ros__parameters:
+    controller: /csp_controller
+    hardware: ErobSystem
+    lease_seconds: 2.0
+    state_timeout: 0.5
+    handover_timeout: 15.0
+    wrists_enabled: false
+    wrist_stop_timeout: 3.0

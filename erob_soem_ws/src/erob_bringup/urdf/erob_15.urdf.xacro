@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="erob_15">
+  <xacro:arg name="config_file" default="$(find erob_bringup)/config/robot_mock.yaml"/>
+  <xacro:arg name="backend" default="mock"/>
+  <xacro:arg name="enable_mock_fault_injection" default="false"/>
+  <xacro:property name="cfg" value="${xacro.load_yaml('$(arg config_file)')}"/>
+  <link name="base_link"/>
+  <xacro:macro name="physical_joint" params="m">
+    <link name="${m['joint']}_link"/>
+    <joint name="${m['joint']}" type="revolute">
+      <parent link="base_link"/><child link="${m['joint']}_link"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="${m.get('min_position',cfg['profile']['min_position'])}" upper="${m.get('max_position',cfg['profile']['max_position'])}"
+             velocity="${m.get('max_velocity',cfg['profile']['max_velocity'])}" effort="${m.get('max_effort',cfg['profile']['max_effort'])}"/>
+    </joint>
+  </xacro:macro>
+  <xacro:macro name="physical_joints" params="motors">
+    <xacro:if value="${len(motors)>0}"><xacro:physical_joint m="${motors[0]}"/><xacro:physical_joints motors="${motors[1:]}"/></xacro:if>
+  </xacro:macro>
+  <xacro:physical_joints motors="${cfg['motors']}"/>
+  <ros2_control name="ErobSystem" type="system">
+    <hardware><plugin>erob_hardware/ErobSystem</plugin><param name="config_file">$(arg config_file)</param><param name="backend">$(arg backend)</param><param name="enable_mock_fault_injection">$(arg enable_mock_fault_injection)</param></hardware>
+    <xacro:macro name="control_joints" params="motors">
+      <xacro:if value="${len(motors)>0}">
+        <xacro:property name="m" value="${motors[0]}"/>
+        <joint name="${m['joint']}">
+          <command_interface name="position"/>
+          <state_interface name="position"/><state_interface name="velocity"/>
+          <xacro:if value="${m.get('effort_verified',cfg['profile']['effort_verified'])}"><state_interface name="effort"/></xacro:if>
+        </joint>
+        <xacro:control_joints motors="${motors[1:]}"/>
+      </xacro:if>
+    </xacro:macro>
+    <xacro:control_joints motors="${cfg['motors']}"/>
+  </ros2_control>
+</robot>

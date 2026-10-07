@@ -1,0 +1,13 @@
+# One-joint CSP commissioning controller. ErobSystem still enables ALL drives.
+# Change the joint name only while this controller is unloaded.
+commissioning_position_controller:
+  ros__parameters:
+    joints: [motor_01_joint]
+    command_interfaces: [position]
+    open_loop_control: false
+    set_last_command_interface_value_as_state_on_activation: false
+    state_interfaces: [position, velocity]
+    allow_partial_joints_goal: false
+    allow_nonzero_velocity_at_trajectory_end: false
+    state_publish_rate: 50.0
+    action_monitor_rate: 20.0

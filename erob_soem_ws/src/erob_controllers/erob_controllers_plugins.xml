@@ -1,0 +1,1 @@
+<library path="erob_controllers"><class name="erob_controllers/CspTrajectoryController" type="erob_controllers::CspTrajectoryController" base_class_type="controller_interface::ControllerInterface"><description>Discrete CSP with synchronous velocity and torque feedforward.</description></class></library>

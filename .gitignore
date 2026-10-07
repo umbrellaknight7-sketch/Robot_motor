@@ -1,0 +1,25 @@
+# Local tools and editor state
+/.agents/
+/.aws/
+/.codex/
+/.vscode/
+
+# Generated ROS workspace output
+build/
+install/
+log/
+logs/
+artifacts/
+test_results/
+
+# Python caches and local backups
+__pycache__/
+.pytest_cache/
+*.py[cod]
+*.bak
+*.log
+
+# Historical material and duplicate workspace archive
+/erob_soem_ws/archive/
+/erob_soem_ws/lib/
+/erob_soem_ws/erob_soem_ws.zip

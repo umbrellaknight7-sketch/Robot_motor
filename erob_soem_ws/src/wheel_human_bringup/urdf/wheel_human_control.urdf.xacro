@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="wheel_human">
+  <xacro:arg name="model_file" default="$(find wheel_human_description)/urdf/wheel_human.urdf.xacro"/>
+  <xacro:arg name="config_file" default="$(find wheel_human_bringup)/config/robot_mock.yaml"/>
+  <xacro:arg name="backend" default="mock"/>
+  <xacro:arg name="enable_mock_fault_injection" default="false"/>
+  <xacro:include filename="$(arg model_file)"/>
+  <xacro:include filename="$(find wheel_human_bringup)/urdf/erob.ros2_control.xacro"/>
+  <xacro:erob_control config_file="$(arg config_file)" backend="$(arg backend)"
+                      enable_mock_fault_injection="$(arg enable_mock_fault_injection)"/>
+</robot>
